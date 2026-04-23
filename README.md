@@ -10,7 +10,7 @@ O sistema utiliza um microcontrolador **ESP32** para coletar dados de temperatur
 - **Comunicação:** Protocolo MQTT (Eclipse Mosquitto).  
 - **Banco de Dados:** InfluxDB v1.12.4 (Séries Temporais).  
 - **Visualização/Dashboard**: Grafana v13.0.1 (Monitoramento).  
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnEAAAACCAYAAAA3pIp+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAANUlEQVR4nO3OYQ1AABSAwY8JoIGqr4Z6Eoiggn9mu0twy8wc1RkAAH9xbdVa7V9PAAB47X4A9C4EIsmYmgsAAAAASUVORK5CYII=)  
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnEAAAACCAYAAAA3pIp+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAANUlEQVR4nO3OYQ1AABSAwY8JoIGqr4Z6Eoiggn9mu0twy8wc1RkAAH9xbdVa7V9PAAB47X4A9C4EIsmYmgsAAAAASUVORK5CYII=)
 **🔧 3. Arquitetura e Desafios Técnicos**  
 Durante a implementação, o desafio crítico atual é o acionamento da ventoinha de 12V utilizando a lógica de 3.3V do ESP32:  
 1. **Isolamento de Potência:** Usaremos uma fonte externa de 12V dedicada para a bobina do relé e para o motor da ventoinha, garantindo torque máximo.  
@@ -21,7 +21,7 @@ Durante a implementação, o desafio crítico atual é o acionamento da ventoinh
 **4.1. Banco de Dados (InfluxDB v1.12.x)**  
 Como a versão 1.12 não possui interface web nativa (UI), a gestão é feita via CLI. Acesse o console no terminal e crie o banco:  
 influx  
- CREATE DATABASE smart_it  
+ CREATE DATABASE smart_it_db 
    
 **4.2. Monitoramento de Mensagens (MQTT)**  
 Para validar o tráfego de dados JSON enviados pelo ESP32, utilize o comando:  
@@ -31,7 +31,8 @@ mosquitto_sub -h localhost -t "projeto/smart_it/sensor" -v
 O código fonte completo reside na pasta /Firmware. Certifique-se de configurar as seguintes variáveis antes do upload:  
 SSID / Password: Credenciais da rede Wi-Fi local.  
 MQTT_SERVER: Endereço IP do Broker.  
-INFLUXDB_DB: Nome do banco de dados criado (smart_it_db).  
+INFLUXDB_DB: Nome do banco de dados criado (smart_it_db).
+
 **📂 6. Estrutura do Repositório**  
 /Firmware: Arquivos de código fonte (.cpp).  
 README.md: Documentação técnica principal.  
