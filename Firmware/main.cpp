@@ -3,9 +3,9 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char* wifi_name = "Capella";
-const char* password = "capella24";
-const char* mqtt_server = "10.155.27.205";
+const char* wifi_name = "";
+const char* password = "";
+const char* mqtt_server = "";
 
 
 #define DHTTYPE DHT11
