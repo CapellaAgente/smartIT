@@ -1,4 +1,4 @@
-**Smart IT - Sistema de Monitoramento e Arrefecimento de Racks**  
+#**Smart IT - Sistema de Monitoramento e Arrefecimento de Racks**  
 **📋 1. Descrição do Projeto**  
 Este projeto foi desenvolvido como parte do **Trabalho de Graduação (TG)** para o curso de Engenharia de Computação. O objetivo principal é mitigar o risco de superaquecimento em racks de servidores através de um sistema autônomo de monitoramento térmico e acionamento de arrefecimento ativo.  
 O sistema utiliza um microcontrolador **ESP32** para coletar dados de temperatura e umidade em tempo real, enviando-os via protocolo  **MQTT** para um broker  **Mosquitto** hospedado em um servidor local Linux (ambiente de testes "PC Batata"). Os dados são persistidos em um banco de dados de séries temporais  **InfluxDB** para análise histórica e auditoria.  
