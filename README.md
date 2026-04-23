@@ -23,12 +23,16 @@ Durante a implementação, o desafio crítico atual é o acionamento da ventoinh
 **🚀 4. Configuração do Ambiente (Setup)**  
 **4.1. Banco de Dados (InfluxDB v1.12.x)**  
 Como a versão 1.12 não possui interface web nativa (UI), a gestão é feita via CLI. Acesse o console no terminal e crie o banco:  
+```terminal
 influx  
- CREATE DATABASE smart_it_db 
+ CREATE DATABASE smart_it_db
+```
    
 **4.2. Monitoramento de Mensagens (MQTT)**  
-Para validar o tráfego de dados JSON enviados pelo ESP32, utilize o comando:  
-mosquitto_sub -h localhost -t "projeto/smart_it/sensor" -v  
+Para validar o tráfego de dados JSON enviados pelo ESP32, utilize o comando:
+```
+mosquitto_sub -h localhost -t "projeto/smart_it/sensor" -v
+```
    
 **💻 5. Firmware e Código Fonte**  
 O código fonte completo reside na pasta /Firmware. Certifique-se de configurar as seguintes variáveis antes do upload:  
